@@ -1,0 +1,33 @@
+[alias]
+	sm = submodule
+	fe = submodule foreach
+	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+    whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+    syncBranch = "!sh -c 'if git show-ref --verify refs/remotes/origin/$1;then git fetch;git checkout $1;git reset --hard origin/$1;fi' -"
+    ctree = log --graph --date=iso --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset'
+    mrevert = "!sh -c 'git revert --no-edit $2~$1..$2' -"
+    squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
+    copr = "!sh -c 'git fetch origin refs/pull/$1/head:pull_$1;git checkout pull_$1' -"
+[core]
+	excludesfile = /Users/ckalista/.gitignore_global
+[difftool "sourcetree"]
+	cmd = /Applications/IntelliJ\\ IDEA\\ 14.app/Contents/MacOS/idea diff $LOCAL $PWD/$REMOTE
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = Cedric Kalista
+	email = ckalista@gumtree.com
+[log]
+	date = local
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[push]
+	default = current
+[pull]
+	default = current
+[hub]
+	host = github.corp.ebay.com

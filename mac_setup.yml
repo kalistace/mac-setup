@@ -1,0 +1,76 @@
+- hosts: localhost
+  vars:
+    applications:
+      - slack
+      - intellij-idea
+      - sourcetree
+      - skype
+      - sublime-text
+      - virtualbox
+      - evernote
+      - spotify
+      - google-chrome
+      - whatsapp
+      - divvy
+      - valentina-studio
+      - kindle
+      - visualvm
+      - sqleditor
+      - wireshark
+      - iterm2
+      - java
+    caskroom_versions_applications: []
+    homebrew_versions_applications: []
+  tasks:
+    - name: check for installed applications
+      shell: "brew cask list | grep {{item}}"
+      register: installed_applications
+      with_items: "{{applications}}"
+      ignore_errors: true
+
+    - name: install applications with brew-cask
+      shell: brew cask install --appdir=/Applications {{ item }}
+      with_items: "{{applications}}"
+      when: item not in installed_applications.results|map(attribute='stdout')
+
+    - name: check for installed caskroom versions applications
+      shell: brew cask list | grep {{ item }}
+      register: installed_caskroom_versions_applications
+      with_items: "{{caskroom_versions_applications}}"
+      ignore_errors: true
+
+    - name: install caskroom versions applications with brew-cask
+      shell: brew cask install --appdir=/Applications caskroom/versions/{{ item }}
+      with_items: "{{caskroom_versions_applications}}"
+      when: item not in installed_caskroom_versions_applications.results|map(attribute='stdout')
+
+    - name: tap homebrew versions applications
+      command: brew tap homebrew/versions
+
+    - name: install homebrew versions applications
+      shell: brew install homebrew/versions/{{ item }}
+      with_items: "{{homebrew_versions_applications}}"
+
+    - name: install libraries, tools and services with Homebrew
+      homebrew: name={{ item }} state=present
+      with_items:
+        - git
+        - maven
+        - scala
+        - sbt
+        - node
+        - python3
+        - hub
+        - groovy
+        - curl
+        - ack
+        - nmap
+        - socat
+        - tree
+        - watch
+        - wget
+        - dpkg
+        - go
+        - graphviz
+        - zsh
+        - zsh-completions
