@@ -19,6 +19,7 @@
       - wireshark
       - iterm2
       - java
+      - skitch
     caskroom_versions_applications: []
     homebrew_versions_applications: []
   tasks:
