@@ -75,3 +75,4 @@
         - graphviz
         - zsh
         - zsh-completions
+        - vim

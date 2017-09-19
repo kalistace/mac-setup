@@ -72,7 +72,6 @@ pretty_print "Copying custom zhc config"
 cp .zshrc ~/
 pretty_print "Copying custom git config"
 cp .gitconfig ~/
-
-
-
-
+pretty_print "Copying custom vim config"
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+cp .vimrc ~/
