@@ -20,6 +20,7 @@
       - iterm2
       - java
       - skitch
+      - pgadmin3
     caskroom_versions_applications: []
     homebrew_versions_applications: []
   tasks:
