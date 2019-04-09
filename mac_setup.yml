@@ -21,6 +21,8 @@
       - java
       - skitch
       - pgadmin3
+      - docker
+      - kitematic
     caskroom_versions_applications: []
     homebrew_versions_applications: []
   tasks:
