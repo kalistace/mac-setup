@@ -23,6 +23,8 @@
       - pgadmin3
       - docker
       - kitematic
+      - gpg-suite
+      - keka
     caskroom_versions_applications: []
     homebrew_versions_applications: []
   tasks:
