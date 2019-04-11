@@ -25,6 +25,7 @@
       - kitematic
       - gpg-suite
       - keka
+      - android-studio
     caskroom_versions_applications: []
     homebrew_versions_applications: []
   tasks:
