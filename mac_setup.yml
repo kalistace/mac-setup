@@ -28,6 +28,9 @@
       - android-studio
       - rescuetime
       - bitwarden
+      - postman
+      - alt-c
+      - minikube
     caskroom_versions_applications: []
     homebrew_versions_applications: []
   tasks:
@@ -83,4 +86,9 @@
         - graphviz
         - zsh
         - zsh-completions
+        - zsh-syntax-highlighting
         - vim
+        - gradle
+        - kotlin
+        - kubernetes-helm
+        - jenv

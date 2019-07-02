@@ -46,13 +46,13 @@ DEFAULT_USER="ckalista"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man cp extract sublime github mvn jira heroku scala sbt vagrant brew osx terminalapp kubectl)
+plugins=(git colored-man cp extract sublime github mvn jira heroku scala sbt vagrant brew osx terminalapp kubectl zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Firefox.app/Contents/MacOS/firefox-bin:/Users/ckalista/Documents/tools/play-2.2.3:/Users/ckalista/Documents/tools/activator-dist-1.3.7"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Firefox.app/Contents/MacOS/firefox-bin:$HOME/.jenv/shims:/usr/local/opt/python/libexec/bin:$PATH"
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
 
@@ -64,8 +64,6 @@ export GOPATH=$HOME/golang
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
-export JOBS_HOME=/Users/ckalista/Documents/sources/jenkins-jobs
-export CONFIG_HOME=/Users/ckalista/Documents/sources/jenkins-jobs
 
 # custom functions
 
@@ -158,6 +156,9 @@ else
     popd > /dev/null
 fi
 }
+
+alias toJava8="jenv global oracle64-Picked"
+alias toJava11="jenv global openjdk64-Picked"
  
 # Override the mvn command with the colorized one.
 alias mvn="mvn-color"
