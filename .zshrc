@@ -46,7 +46,7 @@ DEFAULT_USER="ckalista"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man cp extract sublime github mvn jira heroku scala sbt vagrant brew osx terminalapp kubectl zsh-syntax-highlighting)
+plugins=(git colored-man-pages cp extract sublime github mvn jira heroku scala sbt vagrant brew osx terminalapp kubectl zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
