@@ -159,6 +159,7 @@ fi
 
 alias toJava8="jenv global oracle64-Picked"
 alias toJava11="jenv global openjdk64-Picked"
+alias pullAll="ls | xargs -P10 -I{} git -C {} pull"
  
 # Override the mvn command with the colorized one.
 alias mvn="mvn-color"
