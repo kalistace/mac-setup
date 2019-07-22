@@ -159,7 +159,7 @@ fi
 
 alias toJava8="jenv global oracle64-Picked"
 alias toJava11="jenv global openjdk64-Picked"
-alias pullAll="ls | xargs -P1 -I@ zsh -c 'echo -e \"${TEXT_GREEN}@${RESET_FORMATTING}\";git -C @ pull'"
+alias pullAll="ls | xargs -P1 -I@ zsh -c 'echo -e \"${TEXT_GREEN}@${RESET_FORMATTING}\";git -C @ pull --recurse-submodules'"
  
 # Override the mvn command with the colorized one.
 alias mvn="mvn-color"
