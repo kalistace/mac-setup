@@ -55,11 +55,6 @@ pretty_print "Ansible installed"
 pretty_print "Installing Homebrew..."
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 pretty_print "Homebrew installed"
-pretty_print "Installing Homebrew Cask..."
-brew tap phinze/homebrew-cask
-brew install brew-cask
-pretty_print "Homebrew Cask installed"
-
 
 pretty_print "Running ansible..."
 press_any_key_to_continue
