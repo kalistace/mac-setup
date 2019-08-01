@@ -6,7 +6,6 @@
       - sourcetree
       - skype
       - sublime-text
-      - virtualbox
       - evernote
       - spotify
       - google-chrome
@@ -20,7 +19,6 @@
       - iterm2
       - java
       - skitch
-      - pgadmin3
       - docker
       - kitematic
       - gpg-suite
@@ -56,39 +54,32 @@
       with_items: "{{caskroom_versions_applications}}"
       when: item not in installed_caskroom_versions_applications.results|map(attribute='stdout')
 
-    - name: tap homebrew versions applications
-      command: brew tap homebrew/versions
-
-    - name: install homebrew versions applications
-      shell: brew install homebrew/versions/{{ item }}
-      with_items: "{{homebrew_versions_applications}}"
-
     - name: install libraries, tools and services with Homebrew
-      homebrew: name={{ item }} state=present
-      with_items:
-        - git
-        - maven
-        - scala
-        - sbt
-        - node
-        - python3
-        - hub
-        - groovy
-        - curl
-        - ack
-        - nmap
-        - socat
-        - tree
-        - watch
-        - wget
-        - dpkg
-        - go
-        - graphviz
-        - zsh
-        - zsh-completions
-        - zsh-syntax-highlighting
-        - vim
-        - gradle
-        - kotlin
-        - kubernetes-helm
-        - jenv
+      homebrew:
+        name: ['git',
+               'maven',
+               'scala',
+               'sbt',
+               'node',
+               'python3',
+               'hub',
+               'groovy',
+               'curl',
+               'ack',
+               'nmap',
+               'socat',
+               'tree',
+               'watch',
+               'wget',
+               'dpkg',
+               'go',
+               'graphviz',
+               'zsh',
+               'zsh-completions',
+               'zsh-syntax-highlighting',
+               'vim',
+               'gradle',
+               'kotlin',
+               'kubernetes-helm',
+               'jenv'
+        ]
